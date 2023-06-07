@@ -2,6 +2,8 @@ from node import WiredNode
 from medium import Medium, WiredMedium
 import simpy 
 from typing import List
+from utils import convert_capacity, convert_throughput
+import csv
 
 
 class WiredWorld:
@@ -49,8 +51,8 @@ class WiredWorld:
 
             print(node.name, statistic)
 
-        print('tx_throughput_aggregated', tx_throughput_aggregated)
+        print('네트워크 처리량 (Mbps)', convert_throughput(tx_throughput_aggregated))
         mean_pdr = packet_delivery_rate_acc / len(self.node_list) 
-        print('mean pdr', mean_pdr)
+        print('평균 패킷전달률 (%)', mean_pdr * 100)
         
         
