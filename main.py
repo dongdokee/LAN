@@ -21,7 +21,7 @@ if __name__ == "__main__":
     parser.add_argument('--packetrate', default=100, required=False, type=float, help="1초 당 보낼 패킷 개수")
     parser.add_argument('--packetsize', default=1500, required=False, type=int, help="패킷 사이즈 (byte)")
     parser.add_argument('--mac', default='no_csma', required=False, choices=['no_csma', 'csma', 'csma_cd', 'token_bus'])
-    parser.add_argument('--linkspeed', default=1, required=False)
+    parser.add_argument('--linkspeed', default=1, type=float, required=False)
     
     args = parser.parse_args() 
 
